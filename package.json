@@ -8,7 +8,7 @@
     "node-sass": "^4.9.0"
   },
   "scripts": {
-    "compile" : "node-sass sass/app.scss   dist/css/style.css",
-    "watch":"node-sass sass/app.scss   dist/css/style.css -w" 
+    "compile" : "node-sass sass/app.scss   css/style.css",
+    "watch":"node-sass sass/app.scss   css/style.css -w" 
   }
 }
