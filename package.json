@@ -1,0 +1,14 @@
+{
+  "name": "odin-pomodoro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nxdf2015 <niquet_xavier2002@yahoo.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "scripts": {
+    "compile" : "node-sass sass/app.scss   dist/css/style.css",
+    "watch":"node-sass sass/app.scss   dist/css/style.css -w" 
+  }
+}

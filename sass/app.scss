@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$color-display : #282820;
+$color-grey : #d3d4c8;
+$color-grey-light :#313227;
+$font : "roboto",  sans-serif ;
+
+ 
+
+
+.container {
+    height : 50vh;
+    width : 50%;
+    
+    margin : auto;
+    display:grid;
+    grid-template-rows:  [header-start] 150px [header-end menu-start] minmax(min-content,1fr )  [menu-end clock-start] 65% [clock-end] ;
+    grid-template-columns: repeat(4,[col-start] 1fr [col-end]);
+   font-family: $font;
+}
+
+
+
+.header {
+    grid-row : header-start / header-end;
+    font-size : 6rem;
+    grid-column: 1/-1;
+    color : $color-display;
+    background : $color-grey;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 500;     
+    color : transparent;
+    -webkit-background-clip: text ;
+    -moz-background-clip: text;
+    background-clip: text;
+     
+    
+    background-image:   repeating-linear-gradient(136deg,rgba(#402e2e,0.5) 1%, rgba(#f2e515,0.5) 2%, rgba(#3b2a2a,0.5) 3%) ,
+      repeating-linear-gradient(60deg,rgba(lighten(#402e2e ,35%) ,0.5) 1%, rgba(#f2e515,0.5) 2%, rgba(#3b2a2a,0.5) 3%),
+     repeating-linear-gradient(#402e2e 1%,red 3%, darken(#f2e515,15%) 2%, #3b2a2a 3%);
+    
+    @media (max-width : 900px){
+        font-size : 3rem;
+    }
+
+}
+
+
+
+
+.menu {
+    grid-row : menu-start / menu-end;
+    grid-column: 1/-1;
+    display : flex;
+    color : white;
+    align-items: center;
+    background : $color-display;
+    padding-bottom : 5px;
+
+&__box   {
+   display: flex;
+   flex-direction : column;
+   justify-content: space-around;
+   align-items: center;
+   font-size: 1rem;
+   flex : 1;
+   
+   &-active { 
+    background: #f5f65c;
+    color : $color-display;
+}
+
+}
+
+&__title {
+  font-size : 1.5rem;
+  padding : 5px;
+  margin : 3px; 
+  
+}
+
+
+&__control {
+    background:  lighten( grey ,25%);
+   
+    width : 50%;
+     
+    display : flex;
+    font-size : 2rem;
+    justify-content: space-around;
+   
+}
+
+
+        .value {
+            flex : 2;
+
+            text-align : center;
+            background:$color-grey-light;
+        }
+
+        @media (max-width : 550px){
+            flex-direction: column;
+        }
+}
+
+.clock {
+    grid-row : clock-start / clock-end;
+    grid-column: 1/-1;
+    background : $color-grey;
+    display : flex;
+    flex-direction: row;
+    &__control {
+      display : flex;
+      flex-direction :column;
+      justify-content: space-around;
+      background : $color-display;
+
+     
+    }
+
+    &__value {
+        
+       color : black;
+       font-size : 500;
+       background: gold;
+       flex: 2;
+       position : relative;
+       height: 100%;
+       &__time {
+           font-size :4rem;
+           position: absolute;
+           top : 50%;
+           left : 50%;
+           transform : translate(-50%,-50%);
+
+       }
+       
+    }
+
+     @media (max-width : 600px) {
+         flex-direction : column-reverse;
+ 
+     }
+}
+
+
+
+
+.btn {
+    
+    color : yellow;
+    text-transform: uppercase;
+    background: $color-grey-light;
+    outline: none;
+    border : none;
+    font-size : 1.5rem;
+    padding : 5px;
+    &:hover {
+        background: lighten($color-grey-light , 15%);
+    }
+
+}
+
+
+
+
+
