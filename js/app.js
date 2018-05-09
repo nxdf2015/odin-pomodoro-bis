@@ -34,11 +34,11 @@ function Clock(time_init = 25, time_break = 8) {
     switch (type) {
       case "break":
         TIME_BREAK =  action == "left" ? --TIME_BREAK: ++TIME_BREAK;
-
+      break
       case "session":
         TIME_SESSION = action  == "left" ? --TIME_SESSION : ++TIME_SESSION;
     }
-  console.log(TIME_BREAK,TIME_SESSION)
+  
     this.updateValue()
     this.stop();
     this.reset();
